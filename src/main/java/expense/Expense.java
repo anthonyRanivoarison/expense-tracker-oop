@@ -2,12 +2,12 @@ package expense;
 
 import java.time.LocalDate;
 
-public class expense {
+public class Expense {
     private String label;
     private double amount;
     private LocalDate date;
 
-    public expense(double amount, String label, LocalDate date) {
+    public Expense(double amount, String label, LocalDate date) {
         this.amount = amount;
         this.label = label;
         this.date = date;
@@ -25,13 +25,14 @@ public class expense {
         return date;
     }
 
-    boolean isLargeExpense(double amount) {
-        if (amount > 100.0) {
+    public boolean isLargeExpense(double amount) {
+        if(amount > 100.0) {
             return true;
         }
         return false;
     }
 
+    @Override
     public String toString(){
         return "Depense: "+label+" prix"+amount+" le:"+date;
     }
